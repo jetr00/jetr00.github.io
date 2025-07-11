@@ -188,3 +188,9 @@ body {
 	flex-direction: column;
 	gap: none;
 }
+
+@media screen and (max-width: 800px) {
+  .chg {
+    width: 100%;
+	}
+}
