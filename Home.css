@@ -1,79 +1,39 @@
+.orbitron-name {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+
+.orbitron-#List {
+  font-family: "Space Mono", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
 	background-color: black;
 	transition: background-color 1s ease, background-image 1s ease;
-}
-
-#port {
-	color: white;
-	text-align: center;
-	font-family: 'Courier New', monospace;
-	transition: color 0s ease, font-family 1s ease, text-align 1s ease;
-}
-
-#stud {
-	color: white;
-	text-align: center;
-	font-family: Arial, Sans;
-}
-
-#fam {
-	color: white;
-	text-align: center;
-	font-family: Tahoma, sans-serif;
-}
-
-.container {
-	height: 60px;
-	position: relative;
-	background-color: White;
-	text-align: center;
-	padding: 15px 16px;
-	color: Black;
-	display: inline-block;
-	font-size: 16px;
-	border-radius: 12px;
-	align-items: center;
-	cursor: pointer;
-}
-
-.center {
-	margin: 0;
-	position: absolute;
-	top: 40%;
-	left: 50%;
-	-ms-transform: translate(-50%, -50%);
-	transform: translate(-50%, -50%);
-}
-
-.container:hover {
-	background-color: grey;
-}
-
-.container:focus, 
-.container:active {
-	background-color: grey;
-	transition: none;
-	transition-timing-function: ease-in;
-}
-
-.chg {
 	background-image: url(bg.png);
+	background-position: top 10% center;
 	background-size: 100%;
 	background-repeat: no-repeat;
 	background-color: #222;
 }
 
-#btn {
-	transition: opacity 0.5s ease, visibility 1s ease;
-}
-
-.hide {
-	opacity: 0;
-	visibility: hidden;
-	pointer-events: none;
+.name {
+	color: whitesmoke;
+	text-align: left;
+	font-family: "Orbitron", sans-serif;
+	transition: color 0s ease, font-family 1s ease, text-align 1s ease;
 }
 
 #List {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
 	position: fixed;
 	top: 20px;
 	transition: top 0.5s ease;
@@ -81,7 +41,7 @@ body {
 	border: none;
 	background-color: none;
 	color: black;
-	font-family: Tahoma, sans-serif;
+	font-family: "Space Mono", sans-serif;
 }
 
 .menu-item {
@@ -100,7 +60,7 @@ body {
 	color: white;
 }
 
-.container1 {
+.container {
   display: flex;
   flex-direction: column;
   gap: 15px;
@@ -114,6 +74,7 @@ body {
 }
 
 .link-button {
+	font-family: "Space Mono", sans-serif;
 	background-color: white;
 	color: black;
 	padding: 15px 32px;
@@ -122,43 +83,45 @@ body {
 	border-radius: 12px;
 	cursor: pointer;
 	text-decoration: none;
+	transition: background-color 0.5s ease, color 0.5s ease, box-shadow 0.5s ease;
 }
 
 .link-button:hover {
 	background-color: grey;
+	color: white;
+	box-shadow: 0 0 10px rgba(255, 255, 255, 0.4);
 }
 
 .link-button:focus, 
 .link-button:active {
+	display: opacity;
 	background-color: grey;
-	transition: none;
-	transition-timing-function: ease-in;
+	transition-timing-function: ease;
 	outline: none;
 }
 
 .popup {
-  display: none;
-  position: fixed;
-  top: 50%;
-  right: 40px;
-  transform: translateY(-50%);
-  background-color: none;
-  padding: 20px;
-  border-radius: 12px;
-  z-index: 1000;
+	position: fixed;
+	top: 50%;
+	right: 40px;
+	transform: translateY(-50%);
+	background-color: none;
+	padding: 20px;
+	border-radius: 12px;
+	z-index: 1000;
 }
 
 .infopopup {
-	display: none;
+	font-family: "Space Mono", sans-serif;
 	position: fixed;
 	top: 50%;
-	left: 60px;
+	right: 40px;
 	transform: translateY(-50%);
 	background-color: rgba(0, 0, 0, 0.7);
 	padding: 10px;
 	border-radius: 12px;
 	color: white;
-	width: 250px;
+	width: 400px;
 	max-width: 90%;
 }
 
@@ -169,7 +132,7 @@ body {
 }
 
 .conpop {
-	display: none;
+	font-family: "Space Mono", sans-serif;
 	position: fixed;
 	top: 50%;
 	right: 60px;
@@ -178,7 +141,7 @@ body {
 	padding: 10px;
 	border-radius: 12px;
 	color: white;
-	width: 240px;
+	width: 290px;
 	height: 50px;
 	max-width: 90%;
 }
@@ -189,8 +152,77 @@ body {
 	gap: none;
 }
 
-@media screen and (max-width: 800px) {
-  .chg {
-    width: 100%;
+@media screen and (max-width: 1500px) {
+  body {
+    background-size: 300%;
 	}
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+}
+
+.intro {
+	font-family: "Orbitron", sans-serif;
+	position: fixed;
+	z-index: 1;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #222;
+	transition: opacity 1s ease-in-out;
+}
+
+.logo-header {
+	position: absolute;
+	top: 40%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	color: white;
+}
+
+.logo {
+	position: relative;
+	display: inline-block;
+	bottom: -20px;
+	opacity: 0;
+}
+
+.logo.active {
+	bottom: 0;
+	opacity: 1;
+	transition: ease-in-out 0.5s;
+}
+
+.logo.fade {
+	bottom: 150px;
+	opacity: 0;
+	transition: ease-in-out 0.5s;
+}
+
+.intro.fade-out {
+	opacity: 0;
+	pointer-events: none;
+}
+
+.popup,
+.infopopup,
+.conpop {
+	opacity: 0;
+	transform: translateY(-50%) scale(0.95);
+	pointer-events: none;
+	transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.popup.show,
+.infopopup.show,
+.conpop.show,
+.infp.show,
+.conp.show {
+	opacity: 1;
+	transform: translateY(-50%) scale(1);
+	pointer-events: auto;
 }
