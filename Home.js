@@ -1,28 +1,33 @@
-function sitechg() {
-	document.body.classList.toggle("chg");
+let intro = document.querySelector(".intro");
+let logo = document.querySelector(".logo-header");
+let logoS = document.querySelectorAll(".logo");
 
-	const h = document.getElementById("port");
-	if (h) {
-		h.style.color = "white";
-		h.innerHTML = "John Choriatellis";
-		h.style.textAlign = "left";
-		h.style.fontFamily = "Arial";
-	}
+window.addEventListener("DOMContentLoaded", () => {
+	
+    setTimeout(()=>{
+		
+        logoS.forEach((span, idx) => {
+            setTimeout(()=>{
+			    span.classList.add("active");
+		    }, (idx + 1) * 400)
+	    });
+	
+        setTimeout(()=>{
+	    	logoS.forEach((span, idx)=>{
+	    		setTimeout(()=>{
+	    			span.classList.remove("active");
+	    			span.classList.add("fade");
+	    		}, (idx + 1) * 50)
+	    	});
+	    }, 2000);
 
-	const btn = document.getElementById("btn");
-	const stud = document.getElementById("stud");
-	const fam = document.getElementById("fam");
-
-	if (btn) {
-		btn.classList.add("hide");
-		stud.classList.add("hide");
-		fam.classList.add("hide");
-		setTimeout(() => {
-			btn.style.display = "none";
-			stud.style.display = "none";
-			fam.style.display = "none";
-		}, 800);
-	}
+        setTimeout(()=>{
+            intro.classList.add("fade-out");
+            setTimeout(() => {
+                intro.style.display = "none";
+            }, 600);
+        }, 2300)
+    })
 
 	if (document.getElementById("List")) return;
 
@@ -56,23 +61,23 @@ function sitechg() {
 			const conpop = document.querySelector(".conpop");
 			if (popup) {
 				if (item === "Projects") {
-					popup.style.display = "block";
+					popup.classList.add("show");
 				} else {
-					popup.style.display = "none";
+					popup.classList.remove("show");
 				}
 			} 
 			if (infpop) {
 				if (item == "Info") {
-					infpop.style.display = "block";
+					infpop.classList.add("show");
 				} else {
-					infpop.style.display = "none";
+					infpop.classList.remove("show");
 				}
 			}
 			if (conpop) {
 				if (item == "Contact") {
-					conpop.style.display = "block";
+					conpop.classList.add("show");
 				} else {
-					conpop.style.display = "none";
+					conpop.classList.remove("show");
 				}
 			}
 		});
@@ -81,4 +86,4 @@ function sitechg() {
 		row.appendChild(cell);
 		table.appendChild(row);
 	});
-}
+});
